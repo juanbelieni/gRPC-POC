@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package highway;
+
+message Empty {}
+
+message Highway {
+  int32 id = 1;
+  string name = 2;
+  int32 vehicle_count = 3;
+}
+
+service HighwayService {
+  rpc SendHighway(stream Highway) returns (Empty) {}
+}
